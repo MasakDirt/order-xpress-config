@@ -1,0 +1,3 @@
+service:
+  name:  order-xpress config
+  description: configurations for order xpress project
