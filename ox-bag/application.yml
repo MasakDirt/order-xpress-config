@@ -12,6 +12,8 @@ spring:
     password: 1234
     schema-action: CREATE_IF_NOT_EXISTS
     local-datacenter: datacenter1
+  myscript:
+    classpath: classpath:/scripts/data.cql
   cloud:
     openfeign:
       circuitbreaker:
