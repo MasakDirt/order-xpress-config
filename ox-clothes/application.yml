@@ -19,9 +19,6 @@ spring:
       data-locations:
         - classpath*:/scripts/schema.sql
         - classpath*:/scripts/data.sql
-        - classpath*:/scripts/socks_colors.sql
-        - classpath*:/scripts/outerwear_sizes.sql
-        - classpath*:/scripts/outerwear_colors.sql
 
 springdoc:
   swagger-ui.path: /swagger-ui-custom.html
