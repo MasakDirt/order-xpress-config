@@ -34,7 +34,10 @@ resilience4j:
   circuitbreaker:
     instances:
       ox-user:
-        minimum-number-of-calls: 10
+        minimum-number-of-calls: 3
+        slow-call-duration-threshold:
+          seconds: 2
+      ox-clothes:
+        minimum-number-of-calls: 5
         slow-call-duration-threshold:
           seconds: 3
-        failure-rate-threshold: 55
