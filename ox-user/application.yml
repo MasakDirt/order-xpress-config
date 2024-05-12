@@ -47,7 +47,7 @@ resilience4j:
         minimum-number-of-calls: 10
         slow-call-duration-threshold:
           seconds: 2
-      ox-bag-remove-clothes:
+      ox-bag-reset-clothes:
         minimum-number-of-calls: 15
         slow-call-duration-threshold:
           seconds: 2
