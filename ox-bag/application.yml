@@ -33,11 +33,11 @@ eureka:
 resilience4j:
   circuitbreaker:
     instances:
-      ox-user:
+      ox-user-get:
         minimum-number-of-calls: 3
         slow-call-duration-threshold:
-          seconds: 2
-      ox-clothes:
+          seconds: 1
+      ox-clothes-get:
         minimum-number-of-calls: 5
         slow-call-duration-threshold:
-          seconds: 3
+          seconds: 2

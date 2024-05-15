@@ -39,15 +39,11 @@ mapstruct:
 resilience4j:
   circuitbreaker:
     instances:
-      ox-bag-create:
-        minimum-number-of-calls: 3
-        slow-call-duration-threshold:
-          seconds: 2
       ox-bag-get-price:
         minimum-number-of-calls: 10
         slow-call-duration-threshold:
-          seconds: 2
+          seconds: 1
       ox-bag-reset-clothes:
-        minimum-number-of-calls: 15
+        minimum-number-of-calls: 10
         slow-call-duration-threshold:
-          seconds: 2
+          seconds: 1

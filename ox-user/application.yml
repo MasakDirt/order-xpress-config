@@ -42,12 +42,8 @@ resilience4j:
       ox-bag-create:
         minimum-number-of-calls: 3
         slow-call-duration-threshold:
-          seconds: 2
-      ox-bag-get-price:
-        minimum-number-of-calls: 10
+          seconds: 1
+      ox-account-create:
+        minimum-number-of-calls: 3
         slow-call-duration-threshold:
-          seconds: 2
-      ox-bag-reset-clothes:
-        minimum-number-of-calls: 15
-        slow-call-duration-threshold:
-          seconds: 2
+          seconds: 1
