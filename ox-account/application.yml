@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: ox-account
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: 1234
+    url: jdbc:mariadb://localhost:3307/ox_account
+  jpa:
+    hibernate:
+      ddl-auto: none
+  sql:
+    init:
+      mode: always
+      data-locations:
+        - classpath*:/scripts/schema.sql
+        - classpath*:/scripts/data.sql
+
+springdoc:
+  swagger-ui.path: /swagger-ui-custom.html
+  swagger-ui:
+    operationsSorter: method
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+    enabled: true
+
+mapstruct:
+  processor:
+    default-component-model: spring
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      ox-bag-create:
+        minimum-number-of-calls: 3
+        slow-call-duration-threshold:
+          seconds: 2
+      ox-bag-get-price:
+        minimum-number-of-calls: 10
+        slow-call-duration-threshold:
+          seconds: 2
+      ox-bag-reset-clothes:
+        minimum-number-of-calls: 15
+        slow-call-duration-threshold:
+          seconds: 2
