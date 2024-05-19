@@ -12,12 +12,28 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
-  sql:
-    init:
-      mode: always
-      data-locations:
-        - classpath*:/scripts/schema.sql
-        - classpath*:/scripts/data.sql
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: order-xpress-login
+            authorization-grant-type: authorization_code
+            scope:
+              - openid
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/order-xpress
+            user-name-attribute: principal_username
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/order-xpress
+  keycloak:
+    auth:
+      realm-id: 3743ce53-d2ef-4ca6-9a5a-399ba2ca7205
+      grant-type: password
+      client-id: order-xpress-login
+      login-url: http://localhost:8080/realms/order-xpress/protocol/openid-connect/token
 
 springdoc:
   swagger-ui.path: /swagger-ui-custom.html
