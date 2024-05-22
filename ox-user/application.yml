@@ -57,9 +57,7 @@ resilience4j:
     instances:
       ox-bag-create:
         minimum-number-of-calls: 3
-        slow-call-duration-threshold:
-          seconds: 1
+        slow-call-duration-threshold: PT1S
       ox-account-create:
         minimum-number-of-calls: 3
-        slow-call-duration-threshold:
-          seconds: 1
+        slow-call-duration-threshold: PT1S

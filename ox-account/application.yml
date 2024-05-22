@@ -41,9 +41,7 @@ resilience4j:
     instances:
       ox-bag-get-price:
         minimum-number-of-calls: 10
-        slow-call-duration-threshold:
-          seconds: 1
+        slow-call-duration-threshold: PT1S
       ox-bag-reset-clothes:
         minimum-number-of-calls: 10
-        slow-call-duration-threshold:
-          seconds: 1
+        slow-call-duration-threshold: PT1S

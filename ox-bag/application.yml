@@ -35,9 +35,7 @@ resilience4j:
     instances:
       ox-user-get:
         minimum-number-of-calls: 3
-        slow-call-duration-threshold:
-          seconds: 1
+        slow-call-duration-threshold: PT1S
       ox-clothes-get:
         minimum-number-of-calls: 5
-        slow-call-duration-threshold:
-          seconds: 2
+        slow-call-duration-threshold: PT2S
