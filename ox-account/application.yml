@@ -61,3 +61,10 @@ resilience4j:
       ox-bag-reset-clothes:
         minimum-number-of-calls: 10
         slow-call-duration-threshold: PT1S
+      ox-user-get:
+        minimum-number-of-calls: 10
+        slow-call-duration-threshold: PT1S
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: PT5S
+        permitted-number-of-calls-in-half-open-state: 3
+        sliding-window-size: 10
