@@ -20,17 +20,6 @@ spring:
         - classpath*:/scripts/data.sql
   security:
     oauth2:
-      client:
-        registration:
-          keycloak:
-            client-id: order-xpress-login
-            authorization-grant-type: authorization_code
-            scope:
-              - openid
-        provider:
-          keycloak:
-            issuer-uri: http://localhost:8080/realms/order-xpress
-            user-name-attribute: principal_username
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8080/realms/order-xpress
