@@ -12,10 +12,22 @@ spring:
     password: 1234
     schema-action: CREATE_IF_NOT_EXISTS
     local-datacenter: datacenter1
-  cloud:
-    openfeign:
-      circuitbreaker:
-        enabled: true
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: order-xpress-login
+            authorization-grant-type: authorization_code
+            scope:
+              - openid
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/order-xpress
+            user-name-attribute: principal_username
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/order-xpress
 
 springdoc:
   swagger-ui.path: /swagger-ui-custom.html
