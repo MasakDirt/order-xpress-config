@@ -2,16 +2,11 @@ server:
   port: 8062
 
 spring:
-  datasource:
-    url: jdbc:h2:mem:ox_bag;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-  sql:
-    init:
-      mode: always
-      data-locations:
-        - classpath*:/scripts/schema.sql
-        - classpath*:/scripts/data.sql
+  cassandra:
+    keyspace-name: ox_bag_tests
+    contact-points: localhost
+    port: 9042
+    username: user
+    password: 1234
+    schema-action: CREATE_IF_NOT_EXISTS
+    local-datacenter: datacenter1
