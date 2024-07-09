@@ -36,9 +36,9 @@ spring:
       login-url: http://localhost:8080/realms/order-xpress/protocol/openid-connect/token
 
 springdoc:
-  swagger-ui.path: /swagger-ui-custom.html
   swagger-ui:
-    operationsSorter: method
+    operations-sorter: method
+    path: /swagger-ui-custom.html
 
 eureka:
   client:
